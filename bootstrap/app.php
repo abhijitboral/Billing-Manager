@@ -15,6 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'super_admin' => \App\Http\Middleware\EnsureUserIsSuperAdmin::class,
         ]);
+
+        $middleware->appendToGroup('web', \App\Http\Middleware\EnsureUserIsActive::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
