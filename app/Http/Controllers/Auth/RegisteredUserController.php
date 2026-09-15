@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect(route('dashboard', absolute: false))
+        return redirect(route('users.index', absolute: false))
             ->with('status', 'User registered successfully.');
     }
 }
