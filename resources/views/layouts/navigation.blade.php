@@ -72,6 +72,10 @@
                 <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('register')">
                     {{ __('Add User') }}
                 </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('billing-plans.index')" :active="request()->routeIs('billing-plans.*')">
+                    {{ __('Billing Plans') }}
+                </x-responsive-nav-link>
             @endif
         </div>
 
